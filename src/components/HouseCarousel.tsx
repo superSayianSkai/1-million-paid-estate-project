@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, Home, Building, MapPin, Heart } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Home, Building, MapPin } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
 
 interface Agent {
@@ -116,18 +116,6 @@ const HouseCarousel: React.FC = () => {
         setCurrentIndex((prev) => Math.max(prev - 1, 0));
     };
 
-    const getTagStyles = (type: string) => {
-        switch (type) {
-            case 'popular':
-                return 'bg-red-500 text-white';
-            case 'new':
-                return 'bg-blue-500 text-white';
-            case 'deal':
-                return 'bg-green-500 text-white';
-            default:
-                return 'bg-gray-500 text-white';
-        }
-    };
 
     const getTabIcon = (tab: string) => {
         switch (tab) {
