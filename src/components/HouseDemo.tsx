@@ -46,7 +46,7 @@ const HouseDemo: React.FC = () => {
     };
 
     return (
-        <div className="min-h-screen max-w-[90rem]  mx-auto bg-gradient-to-br from-white via-slate-100 to-white">
+        <div className="min-h-screen max-w-[90rem] mx-auto">
             {/* Header */}
             <header className="bg-white shadow-sm">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

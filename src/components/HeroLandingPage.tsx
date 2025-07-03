@@ -24,9 +24,9 @@ const HeroLandingPage = () => {
         const handleScroll = () => {
             const scrollY = window.scrollY;
 
-
-            const isSmallScreen = window.innerWidth < 640;
-            const threshold = isSmallScreen ? 10 : window.innerHeight;
+            console.log(scrollY)
+            const isSmallScreen = window.innerWidth < 20;
+            const threshold = isSmallScreen ? 10 : 100;
 
             if (scrollY > threshold) {
                 setScrolled(true);
@@ -52,7 +52,7 @@ const HeroLandingPage = () => {
 
 
     return (
-        <div className="max-w-[90rem] overflow-hidden mx-auto min-h-screen bg-gradient-to-br from-white via-slate-100 to-white">
+        <div className="max-w-[90rem] overflow-hidden mx-auto min-h-screen ">
             {/* Navigation */}
             <nav
                 className={`fixed max-w-[90rem] top-6 left-0 right-0 z-50 transition-all duration-700 md:py-2 mx-auto px-4 ${isScrolled
