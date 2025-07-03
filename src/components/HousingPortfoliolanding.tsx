@@ -2,7 +2,7 @@
 import HeroLandingPage from "./HeroLandingPage"
 const HousingPortfoliolanding = () => {
   return (
-    <div>
+    <div className="bg-gradient-to-br from-white via-slate-100 to-white">
       <HeroLandingPage />
     </div>
   )

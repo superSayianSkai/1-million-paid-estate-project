@@ -3,10 +3,10 @@ import HouseDemo from "./components/HouseDemo"
 import { createBrowserRouter, RouterProvider, Outlet, ScrollRestoration } from "react-router-dom"
 
 const RootLayout = () => (
-  <>
+  <div className="bg-gradient-to-br from-white via-slate-100 to-white">
     <ScrollRestoration />
     <Outlet />
-  </>
+  </div>
 )
 
 const App = () => {

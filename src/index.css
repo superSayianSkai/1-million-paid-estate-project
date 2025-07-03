@@ -43,6 +43,6 @@ body {
 }
 
 
-.overflow {
+.scrollbar-hide {
   scrollbar-width: none;
 }

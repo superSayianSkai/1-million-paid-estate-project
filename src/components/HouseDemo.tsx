@@ -46,7 +46,7 @@ const HouseDemo: React.FC = () => {
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-white via-slate-100 to-white">
+        <div className="min-h-screen max-w-[90rem] mx-auto bg-gradient-to-br from-white via-slate-100 to-white">
             {/* Header */}
             <header className="bg-white shadow-sm">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -67,7 +67,7 @@ const HouseDemo: React.FC = () => {
                 </div>
             </header>
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div className="max-w-7xl mx-auto sm:px-6 lg:px-8 py-8">
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                     {/* Image Gallery */}
                     <div className="lg:col-span-2">
@@ -210,7 +210,7 @@ const HouseDemo: React.FC = () => {
                 </div>
 
                 {/* Map Section */}
-                <div className="mt-8 md:w-[70%] h-[500px] md:p-8 ">
+                <div className="mt-8 md:p-8 ">
                     <h2 className="text-2xl font-bold mb-4">Location</h2>
                     <div className="flex items-center space-x-2 mb-4">
                         <MapPin className="w-5 h-5 text-gray-500" />
@@ -220,12 +220,12 @@ const HouseDemo: React.FC = () => {
                         <img
                             src={google}
                             alt="Map location"
-                            className="w-[100%] object-cover h-[350px] rounded-lg"
+                            className="w-[100%] object-cover  rounded-lg"
                         />
                     </div>
                 </div>
-            <Footer />
             </div>
+            <Footer />
         </div>
     );
 };

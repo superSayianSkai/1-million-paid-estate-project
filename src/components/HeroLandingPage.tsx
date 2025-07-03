@@ -22,13 +22,19 @@ const HeroLandingPage = () => {
 
     useEffect(() => {
         const handleScroll = () => {
-            const scrollY = window.scrollY
-            if (scrollY > window.innerHeight) {
+            const scrollY = window.scrollY;
+
+
+            const isSmallScreen = window.innerWidth < 640;
+            const threshold = isSmallScreen ? 10 : window.innerHeight;
+
+            if (scrollY > threshold) {
                 setScrolled(true);
             } else {
                 setScrolled(false);
             }
         };
+
 
         console.log(isScrolled);
         // Call once on mount (if you want)
@@ -185,9 +191,9 @@ const HeroLandingPage = () => {
                 {/* Animated background elements */}
                 <div className="absolute top-20 right-8 w-32 h-32 bg-gradient-to-br from-yellow-500/10 to-orange-500/10 rounded-full blur-3xl animate-pulse"></div>
                 <div className="absolute bottom-32 left-8 w-24 h-24 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-full blur-2xl animate-pulse" style={{ animationDelay: '1s' }}></div>
-            </div>         
-            
-               {/* Hero Section */}
+            </div>
+
+            {/* Hero Section */}
             <div className="relative">
                 <div className="absolute -top-38 -left-18   h-60 md:w-[500px] md:h-[400px] rounded-full bg-gradient-to-tr from-yellow-400 to-yellow-500 opacity-15 blur-xl "></div>
 
@@ -254,49 +260,46 @@ const HeroLandingPage = () => {
 
                         {/* Hero Image */}
                         <div
-                            className={`z-0  md:w-[50%] h-[400px] ml-6 max-md:rounded-tl-4xl max-md:rounded-bl-4xl md:h-[640px] relative md:rounded-bl-[20%] max-w-8xl md:mx-auto overflow-hidden shadow-2xl transform transition-transform duration-[1200ms] ease-out ${showContent ? "scale-100 opacity-100" : "scale-110 opacity-0"
+                            className={`z-0 md:w-[50%] h-[400px] ml-6 max-md:rounded-tl-4xl max-md:rounded-bl-4xl md:h-[640px] relative md:rounded-bl-[20%] max-w-8xl md:mx-auto overflow-hidden shadow-2xl transform transition-transform duration-[1200ms] ease-out ${showContent ? "scale-100 opacity-100" : "scale-110 opacity-0"
                                 }`}
                         >
                             <div className="bg-black absolute inset-0 opacity-40 z-10" />
                             <img src={photo} className="w-[100%] h-[100%] object-cover z-0" />
-                            <div className="flex gap-x-2 absolute bottom-10 left-10 md:left-20">
-                                <div className="bg-white gap-x-2 flex items-center justify-center z-20 w-[220px] h-[70px] rounded-3xl">
-                                    <img
-                                        src={image}
-                                        className="w-[45px] h-[45px] rounded-full object-cover"
-                                    />
-                                    <div className="text-center">
-                                        <p className="text-[1rem] font-bold">6 premium house</p>
-                                        <p className="text-[.7rem] text-gray-500">Sold monthly</p>
-                                    </div>
-                                </div>
-                                <div className="bg-white gap-x-2 flex items-center justify-center z-20 w-[220px] h-[70px] rounded-3xl">
-                                    <img
-                                        src={hey}
-                                        className="w-[45px] h-[45px] rounded-full object-cover"
-                                    />
-
-                                    <div className="text-center">
-                                        <p className="text-[1rem] font-bold">
-                                            112 listings
-                                        </p>
-                                        <p className="text-[.7rem] text-gray-500">Now available</p>
-                                    </div>
-                                </div>
-                                <div className="bg-white gap-x-2 flex items-center justify-center z-20 w-[220px] h-[70px] rounded-3xl">
-                                    <img
-                                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=40&h=40&fit=crop&crop=face"
-                                        className="w-[45px] h-[45px] rounded-full object-cover"
-                                    />
-
-                                    <div className="text-center">
-                                        <p className="text-[1rem] font-bold">
-                                            48 agents
-                                        </p>
-                                        <p className="text-[.7rem] text-gray-500">
-                                            Verified & active
-                                        </p>
-                                    </div>
+                            <div className="absolute bottom-10 left-0 z-10 right-0 px-4 overflow-x-auto  scrollbar-hide">
+                                <div className="flex gap-x-2 w-max pl-20 md:pl-30">
+                                    {[...Array(3)].map((_, i) => (
+                                        <div
+                                            key={i}
+                                            className="bg-white flex items-center gap-x-2 justify-center w-[220px] h-[70px] rounded-3xl flex-shrink-0 snap-start shadow-md"
+                                        >
+                                            <img
+                                                src={
+                                                    i === 0
+                                                        ? image
+                                                        : i === 1
+                                                            ? hey
+                                                            : "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=40&h=40&fit=crop&crop=face"
+                                                }
+                                                className="w-[45px] h-[45px] rounded-full object-cover"
+                                            />
+                                            <div className="text-center">
+                                                <p className="text-[1rem] font-bold">
+                                                    {i === 0
+                                                        ? "6 premium house"
+                                                        : i === 1
+                                                            ? "112 listings"
+                                                            : "48 agents"}
+                                                </p>
+                                                <p className="text-[.7rem] text-gray-500">
+                                                    {i === 0
+                                                        ? "Sold monthly"
+                                                        : i === 1
+                                                            ? "Now available"
+                                                            : "Verified & active"}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    ))}
                                 </div>
                             </div>
                         </div>
