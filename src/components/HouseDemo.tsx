@@ -46,7 +46,7 @@ const HouseDemo: React.FC = () => {
     };
 
     return (
-        <div className="min-h-screen max-w-[90rem] mx-auto bg-gradient-to-br from-white via-slate-100 to-white">
+        <div className="min-h-screen max-w-[90rem]  mx-auto bg-gradient-to-br from-white via-slate-100 to-white">
             {/* Header */}
             <header className="bg-white shadow-sm">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -56,11 +56,11 @@ const HouseDemo: React.FC = () => {
                                 Back
                             </NavLink>
                         </div>
-                        <div className="text-2xl font-bold text-yellow-400">J&J Management </div>
+                        <div className="text-[1.2rem] md:text-2xl font-bold text-yellow-400">J&J Management </div>
                         <div className="flex items-center space-x-4">
 
                             <button className="p-2 text-gray-600 hover:text-gray-900 transition-colors">
-                                <Share2 className="w-6 h-6 cursor-pointer hover:text-gray-500 " />
+                                <Share2 className="w-4 h-4 sm:w-6 sm:h-6 cursor-pointer hover:text-gray-500 " />
                             </button>
                         </div>
                     </div>
@@ -70,8 +70,8 @@ const HouseDemo: React.FC = () => {
             <div className="max-w-7xl mx-auto sm:px-6 lg:px-8 py-8">
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                     {/* Image Gallery */}
-                    <div className="lg:col-span-2">
-                        <div className="relative bg-gray-900 rounded-xl overflow-hidden group">
+                    <div className="lg:col-span-2 px-2">
+                        <div className="relative  bg-gray-900 rounded-xl overflow-hidden group">
                             <img
                                 src={images[currentImageIndex]}
                                 alt="House exterior"
@@ -120,7 +120,7 @@ const HouseDemo: React.FC = () => {
                     </div>
 
                     {/* Property Details */}
-                    <div className=" space-y-6">
+                    <div className=" space-y-6 px-4">
                         {/* Price and Basic Info */}
                         <div className="md:bg-white rounded-xl max-md:pt-8 md:p-6 md:shadow-lg">
                             <div className="text-3xl font-bold text-gray-900 mb-2">$ 35,000,000</div>
@@ -185,7 +185,7 @@ const HouseDemo: React.FC = () => {
                 </div>
 
                 {/* Features Section */}
-                <div className="mt-12 md:p-8">
+                <div className="px-4 mt-12 md:p-8">
                     <h2 className="text-2xl font-bold mb-6">What's Special</h2>
                     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
                         {features.map((feature, index) => (
@@ -198,7 +198,7 @@ const HouseDemo: React.FC = () => {
                 </div>
 
                 {/* Description */}
-                <div className="mt-8 md:p-8">
+                <div className="mt-8 md:p-8 px-4">
                     <h2 className="text-2xl font-bold mb-4">About This Home</h2>
                     <p className="text-gray-700 leading-relaxed">
                         This mid-town multi-family home offers a remarkable living experience. Designed for comfort and privacy,
@@ -210,7 +210,7 @@ const HouseDemo: React.FC = () => {
                 </div>
 
                 {/* Map Section */}
-                <div className="mt-8 md:p-8 ">
+                <div className="mt-8 md:p-8 px-4">
                     <h2 className="text-2xl font-bold mb-4">Location</h2>
                     <div className="flex items-center space-x-2 mb-4">
                         <MapPin className="w-5 h-5 text-gray-500" />
