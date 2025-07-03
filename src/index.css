@@ -46,3 +46,6 @@ body {
 .scrollbar-hide {
   scrollbar-width: none;
 }
+.overflow {
+  scrollbar-width: none;
+}
