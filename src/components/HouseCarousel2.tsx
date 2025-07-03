@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight, MapPin, Bed, Bath, Square, Star } from 'lucide-react';
+import { NavLink } from 'react-router-dom';
 import 'aos/dist/aos.css';
 
 interface House {
@@ -143,9 +144,9 @@ const HouseCarousel2: React.FC = () => {
                         </div>
                       </div>
 
-                      <button className="bg-yellow-400 hover:bg-yellow-300 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200 w-fit">
+                      <NavLink to="/demo" className="bg-yellow-400 hover:bg-yellow-300 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200 w-fit">
                         View Details
-                      </button>
+                      </NavLink>
                     </div>
                   </div>
                 </div>
